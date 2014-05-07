@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.logic.goaltracking"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.logic.selfmonitoring"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.authentication"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.goaltracking"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.selfmonitoring"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.storage.local"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.meallog"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.storage.external.food"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.logic.meallog"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.logic.schedule"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.schedule"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.storage.external.quotes"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.external.quotes"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

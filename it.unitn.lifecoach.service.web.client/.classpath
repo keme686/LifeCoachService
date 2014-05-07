@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.model"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.authentication.adapter"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.goaltracking.adapter"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.process.selfmonitoring.adapter"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="lib" path="/home/kemele/Documents/courses/Dropbox/courses/IntroSDE/finalproject/resource/gson-2.2.4.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.logic.meallog.adapter"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

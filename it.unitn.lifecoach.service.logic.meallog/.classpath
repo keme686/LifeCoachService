@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.3-dist/joda-time-2.3/joda-time-2.3.jar" sourcepath="lib/joda-time-2.3-dist/joda-time-2.3/joda-time-2.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/it.unitn.lifecoach.service.logic.meallog/lib/joda-time-2.3-dist/joda-time-2.3/joda-time-2.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JerseryLib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.service.storage.local.adapter"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/it.unitn.lifecoach.model"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
