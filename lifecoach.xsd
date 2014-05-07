@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Contains all types of data elements used in lifecoach application-->
+  <xs:element name="lifecoach">
+   <xs:complexType>
+    <xs:all>
+	 <xs:element ref="users" minOccurs="0" />
+	 <xs:element ref="products" minOccurs="0" />
+	 <xs:element ref="quotes" minOccurs="0" />
+	</xs:all>
+   </xs:complexType>
+  </xs:element>
+
+  <!-- List of users. Each user element contains the goals, measures, schedules and mealLogs related to the user -->
+  <xs:element name="users">
+   <xs:complexType>
+    <xs:sequence>
+	 <xs:element ref="user" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+   </xs:complexType>
+  </xs:element>
+  
+  <!-- List of food products -->
+  <xs:element name="products">
+   <xs:complexType>
+    <xs:sequence>
+	 <xs:element name="product" type="product" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+   </xs:complexType>
+  </xs:element>
+  
+  <!-- List of quotes -->
+  <xs:element name="quotes">
+   <xs:complexType>
+    <xs:sequence>
+	 <xs:element ref="quote" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+   </xs:complexType>
+  </xs:element>
+  
+  <!-- local source -->
+  <xs:element name="datapoint" type="datapoint"/>
+
+  <xs:element name="goal" type="goal"/>
+
+  <xs:element name="mealLog" type="mealLog"/>
+
+  <xs:element name="measure" type="measure"/>
+
+  <xs:element name="schedule" type="schedule"/>
+
+  <xs:element name="user" type="user"/>
+  
+   <!-- external source -->
+  <xs:element name="product" type="product"/>
+
+  <xs:element name="productScore" type="productScore"/> 
+  
+  <xs:element name="nutrient" type="nutrient"/>
+
+  <xs:element name="quote" type="quote_type"/>
+  
+  <!-- Local database schema objects -->
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="username" type="xs:string"/>
+      <xs:element name="accessToken" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="status" type="xs:boolean"/>
+      <xs:element name="gender" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateOfBirth" type="xs:long" minOccurs="0"/>
+      <xs:element name="location" type="xs:string" minOccurs="0"/>
+      <xs:element name="mobileNum" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" />
+      <xs:element name="profilePhoto" type="xs:string" minOccurs="0"/>
+      <xs:element name="goals" type="goal" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="mealLogs" type="mealLog" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="measures" type="measure" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="schedules" type="schedule" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="goal">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="status" type="xs:string"/>
+      <xs:element name="goalType" type="xs:string" />
+      <xs:element name="goalDate" type="xs:long"/>
+      <xs:element name="goalTag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="goalValue" type="xs:double"/>
+      <xs:element name="goalValueUnit" type="xs:string"/>
+      <xs:element name="initialValue" type="xs:double"/>
+      <xs:element name="initialValueUnit" type="xs:string"/>
+      <xs:element name="plannedDirection" type="xs:int"/>
+      <xs:element name="rate" type="xs:double"/>
+      <xs:element name="rateType" type="xs:string"/>
+      <xs:element name="rateUnit" type="xs:string"/>
+	  <xs:element name="measures" type="measure" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="datapoints" type="datapoint" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="updatedTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="datapoint">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="value" type="xs:double"/>
+      <xs:element name="valueUnit" type="xs:string"/>
+      <xs:element name="timestamp" type="xs:long"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+      <xs:element name="updatedTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mealLog">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="calories" type="xs:int"/>
+      <xs:element name="typeOfMeal" type="xs:string" minOccurs="0"/>
+      <xs:element name="servingSize" type="xs:double" minOccurs="0"/>
+      <xs:element name="servingSizeUnit" type="xs:string" minOccurs="0"/>
+      <xs:element name="servingTime" type="xs:string" />
+      <xs:element name="updatedTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="measure">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="value" type="xs:double"/>
+      <xs:element name="valueUnit" type="xs:string"/>
+      <xs:element name="datapoints" type="datapoint" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="updateTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="schedule">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="desc" type="xs:string" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:long"/>
+      <xs:element name="endTime" type="xs:long" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="updatedTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Objects retrieved from external sources using adapters -->
+  
+  <!-- From FoodEssentials API -->
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element name="upc" type="xs:string" minOccurs="0"/>
+      <xs:element name="prodName" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="brand" type="xs:string" minOccurs="0"/>
+      <xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+      <xs:element name="prodSize" type="xs:string" minOccurs="0"/>
+      <xs:element ref="productScore" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productScore">
+    <xs:sequence>
+      <xs:element name="upc" type="xs:string" minOccurs="0"/>
+      <xs:element name="nutrients" type="nutrient" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="score" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nutrient">
+    <xs:sequence>
+      <xs:element name="nutrientName" type="xs:string" minOccurs="0"/>
+      <xs:element name="nutrientValue" type="xs:string" minOccurs="0"/>
+      <xs:element name="nutrientUom" type="xs:string" minOccurs="0"/>
+      <xs:element name="nutrientFeLevel" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- From www.stands4.com quotes API -->
+  <xs:complexType name="quote_type">
+    <xs:sequence>
+      <xs:element name="text" type="xs:string"/>
+      <xs:element name="author" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+ 
+</xs:schema>
